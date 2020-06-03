@@ -2,8 +2,8 @@
 <img alt="Data Science Portfolio" title="Data Science Portfolio" src="https://raw.githubusercontent.com/DarleySoares/Data-Science/master/images/top_markdown.png" />
 
 <p style = "text-align: right">
-    <a href = ""><img src = https://raw.githubusercontent.com/DarleySoares/Data-Science/master/images/brazil.png></a>
-    <a href = ""><img src = https://raw.githubusercontent.com/DarleySoares/Data-Science/master/images/usa.png></a>
+    <a href = "https://github.com/DarleySoares/Data-Science/blob/master/README.md"><img src = https://raw.githubusercontent.com/DarleySoares/Data-Science/master/images/brazil.png></a>
+    <a href = "https://github.com/DarleySoares/Data-Science/blob/master/README_ENG.md"><img src = https://raw.githubusercontent.com/DarleySoares/Data-Science/master/images/usa.png></a>
  </p1>
 
 # Darley Roque Soares
