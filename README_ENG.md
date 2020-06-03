@@ -7,15 +7,17 @@
  </p1>
 
 # Darley Roque Soares
-[![Linkedin](https://img.shields.io/badge/Linkedin-Darley%20Soares-fe7e75.svg)](https://www.linkedin.com/in/darley-soares/) [![Python version](https://img.shields.io/badge/Versão%20do%20Python-3.7+-fe7e75.svg)](https://www.python.org/downloads/) [![Contributions](https://img.shields.io/badge/Contribuições-Bem%20vindas-4e91ba.svg)]()
+[![Linkedin](https://img.shields.io/badge/Linkedin-Darley%20Soares-fe7e75.svg)](https://www.linkedin.com/in/darley-soares/) [![Python version](https://img.shields.io/badge/Python%20version-3.7+-fe7e75.svg)](https://www.python.org/downloads/) [![Contributions](https://img.shields.io/badge/Contributions-welcome-4e91ba.svg)]()
 
-## Sobre mim
+## About me
 *Estagiário em análise dados | Estudante de Engenharia de Controle e Automação na UFMG | Técnico em Eletrônica pelo CEFET MG* 
 
-## Projetos
+*Data Analysis Intern | Control and Automation Engineering Student at UFMG | Eletronic Technician by CEFET MG*
+
+## Projects
 
 
-## Créditos
+## Credits
 
-**Imagem do cabeçalho:**
+**Header illustration:**
 Illustration by [Real Python](https://realpython.com/) via [Real Python](https://realpython.com/numpy-scipy-pandas-correlation-python/)
