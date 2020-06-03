@@ -12,11 +12,14 @@
 
 ## Projects
 
-* **Project 1**[![Portugues](https://raw.githubusercontent.com/DarleySoares/Data-Science/master/images/brazil.png)]() [![Portugues](https://raw.githubusercontent.com/DarleySoares/Data-Science/master/images/usa.png)]()
+* **Project 1**
+[![Linkedin](https://img.shields.io/badge/POR--fe7e75.svg)]()
+[![Linkedin](https://img.shields.io/badge/ENG--fe7e75.svg)]()
+
 * **Project 2**
+
 * **Project 3**
 * **Project 4**
-
 
 ## Credits
 
