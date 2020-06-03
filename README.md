@@ -6,15 +6,16 @@
 
 # Darley Roque Soares
 
+*Estagiário em análise dados | Estudante de Engenharia de Controle e Automação na UFMG | Técnico em Eletrônica pelo CEFET MG* 
+
 *Data Analysis Intern | Control and Automation Engineering Student at UFMG | Eletronic Technician by CEFET MG*
-
-
 
 ## Projects
 
-* [**Linear Regression Model of the price of houses for  rent in Brazil**](https://github.com/DarleySoares/Data-Science/blob/master/Machine_Learning_Casas_para_alugar_no_Brasil/Machine_Learning_Casas_para_alugar_no_Brasil.ipynb)
-* [**Linear Regression Model of the candidates math scores in ENEM 2016**](https://github.com/DarleySoares/Data-Science/blob/master/Machine_Learning_notas_de_matematica_ENEM_2016/Machine_Learning_Notas_de_matematica_ENEM_2016.ipynb)
-* [**Classification Model of the passengers in sinking of the Titanic**](https://github.com/DarleySoares/Data-Science/blob/master/Machine_Learning_Naufragio_Titanic/Machine_Learning_Naufragio_Titanic.ipynb)
+* **Project 1** [![Portugues](https://www.flaticon.com/free-icon/brazil_630591?term=brasil&page=1&position=52)]()
+* **Project 2**
+* **Project 3**
+* **Project 4**
 
 
 ## Credits
