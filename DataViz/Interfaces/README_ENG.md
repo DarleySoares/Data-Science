@@ -3,6 +3,7 @@
     <a href = "https://github.com/DarleySoares/Data-Science/blob/master/DataViz/Interfaces/README_ENG.md"><img src = https://raw.githubusercontent.com/DarleySoares/Data-Science/master/images/usa.png></a>
  </p1>
  
+ 
 # Title
 
 The module offers custom graphics that were developed using the matplotlib package. For graphics there are some possibilities for user customization, such as selecting the color palette.

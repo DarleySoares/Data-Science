@@ -3,6 +3,7 @@
     <a href = "https://github.com/DarleySoares/Data-Science/blob/master/DataViz/Interfaces/README_ENG.md"><img src = https://raw.githubusercontent.com/DarleySoares/Data-Science/master/images/usa.png></a>
  </p1>
 
+
 # Título
 
 O módulo oferece gráficos personalizados que foram desenvolvidos utilizando o pacote matplotlib. Para os gráficos existem algumas possibilidades de personalização do usuário, como por exemplo a seleção da paleta de cores.
