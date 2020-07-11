@@ -10,14 +10,16 @@ class dataviz:
         self.colors = colors
         self.color_labels = color_labels
 
-    def generates_figure(self, axes = True, grid = True):
+    def generates_figure(self, axes = ['bottom', 'left', 'right', 'bottom'], axes_labels = ['x', 'y'], grid = True):
         """Generates the figure, axes and grids.
         
         Parameters
         ----------
-        axes : boolean
-            Axes flag
-        grid : boolean
+        axes : list
+            Axes list
+        axes_labels : list
+            Axes labels list
+        grid : flag
             Grid flag
         Returns
         -------
@@ -30,24 +32,24 @@ class dataviz:
         ax = plt.gca()
         ax.set_facecolor(self.background)
 
+        all_axes = ['bottom', 'left', 'right', 'bottom']
+        delete_axes = set(all_axes) - set(axes)
+        all_axes_labels = ['x', 'y']
+        delete_axes_labels = set(all_axes_labels) - set(axes_labels)
+
         # axes configuration
-        if axes:
-            # removes the bottom and left axes
-            for param in ['top', 'right']:
-                ax.spines[param].set_visible(False)
-            # changes the color of the active axes
-            for param in ['bottom','left']:
-                ax.spines[param].set_color(self.color_labels)
-            # changes the color of the labels 
-            for i in ['x','y']:
-                ax.tick_params(axis = i, colors = self.color_labels)
-        else:
-            # removes the axes
-            for param in ['bottom','top','left','right']:
-                ax.spines[param].set_visible(False)
-            # changes the color of the labels
-            for i in ['x','y']:
-                ax.tick_params(axis = i, colors = self.background)
+        # removes the bottom and left axes
+        for param in delete_axes:
+            ax.spines[param].set_visible(False)
+        # changes the color of the active axes
+        for param in axes:
+            ax.spines[param].set_color(self.color_labels)
+        # changes the color of the labels 
+        for i in axes_labels:
+            ax.tick_params(axis = i, colors = self.color_labels)
+        # changes the color of the labels
+        for i in delete_axes_labels:
+            ax.tick_params(axis = i, colors = self.background)
         
         # grid configuration
         if grid:
@@ -56,7 +58,7 @@ class dataviz:
         
         return ax
 
-    def plot_lines(self, x, y, legend = None, axes = True, grid = True):
+    def line_chart(self, x, y, legend = None, axes = ['bottom', 'left'], axes_labels = ['x','y'], grid = True):
         """Plots line graph with n lines.
         
         Parameters
@@ -67,16 +69,18 @@ class dataviz:
             List with y values
         legend : list
             List with the legends 
-        axes : boolean
-            Axes flag
+        axes : list
+            Axes list
+        axes_labels : list
+            Axes labels list
         grid : boolean
             Grid flag
         """
         
-        ax = self.generates_figure(axes = axes, grid = grid)
+        ax = self.generates_figure(axes = axes, grid = grid, axes_labels= axes_labels)
 
         # plots the lines
-        for i in range(0, len(x)):
+        for i in range(0, len(y)):
             plt.plot(x[i],y[i], color = self.colors[i])
         
         # definition of shadow resources
@@ -106,7 +110,7 @@ class dataviz:
         for text in leg.get_texts():
             plt.setp(text, color = self.color_labels)
 
-    def plot_bar_charts(self, labels, values, legend = None, axes = False, grid = False):
+    def bar_chart(self, labels, values, legend = None, axes = [], axes_labels = ['x'], grid = False):
         """Plots bar chart with n groups.
         
         Parameters
@@ -117,13 +121,15 @@ class dataviz:
             Lista(s) com as quantidades por rupo.
         legend : list
             Lista com as legendas
-        axes : boolean
-            Axes flag
+        axes : list
+            Axes list
+        axes_labels : list
+            Axes labels list
         grid : boolean
             Grid flag
         """
 
-        ax = self.generates_figure(axes = axes, grid = grid)
+        ax = self.generates_figure(axes = axes, grid = grid, axes_labels= axes_labels)
 
         # set the width of the bars
         width = 0.8/len(values)
@@ -156,7 +162,7 @@ class dataviz:
         for text in leg.get_texts():
             plt.setp(text, color = self.color_labels)
 
-    def plot_progress(self, value, circles = 4):
+    def progress_chart(self, value, circles = 4):
         """Plots gauge chart.
         
         Parameters
@@ -195,7 +201,7 @@ class dataviz:
 
         plt.show()
     
-    def plot_horizontal_bar(self, labels, values):
+    def horizontal_bar_chart(self, labels, values):
         """Plots horizontal bar with n groups.
         
         Parameters

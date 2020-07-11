@@ -44,11 +44,12 @@ In the lines chart it's possible to plot n lines on the same axis. The parameter
 |x| x values| list
 |y| y values| list
 |legend| subtitles list| list
-|axes| plot or not the axes| boolean
+|axes| list with the axes| list
+|axes_labels| x label and y label| list
 |grid| plot or not the grids| boolean
 
 ```python
-obj.plot_lines(x = x, y = y, legend = ['line 1', 'line 2','line 3'], axes = True, grid = False)
+obj.line_chart(x = x, y = y, legend = ['line 1', 'line 2','line 3'], axes = ['bottom', 'left'], axes_labels = ['x', 'y'], grid = False)
 ```
 
 ![Lines chart](images/lines_chart.png)
@@ -62,11 +63,12 @@ In the bars chart it's possible to plot n groups with n bars. The parameters tha
 |labels| labels| list
 |values| values of labels| list
 |legend| subtitles list| list
-|axes| plot or not the axes| boolean
+|axes| list with the axes| list
+|axes_labels| x label and y label| list
 |grid| plot or not the grids| boolean
 
 ```python
-obj.plot_bar_charts(labels = labels, values = [men,women], legend = ['men','women'], axes = True, grid = False)
+obj.bar_chart(labels = labels, values = [men,women], legend = ['men','women'], axes = ['bottom', 'left'], axes_labels = ['x', 'y'] True, grid = False)
 ```
 
 ![Bars chart](images/bars_chart.png)

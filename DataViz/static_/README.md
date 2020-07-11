@@ -46,11 +46,12 @@ No gráfico de linhas é possível plotar n linhas no mesmo eixo. Os parâmetros
 |x| valores de x| lista
 |y| valores de y| lista
 |legend| legenda| lista
-|axes| plota ou não os eixos| booleano
+|axes| lista com os eixos desejados| lista
+|axes_labels| lista com quais eixos devem ter labal| lista
 |grid| plota ou não as grades| booleano
 
 ```python
-obj.plot_lines(x = x, y = y, legend = ['line 1', 'line 2','line 3'], axes = True, grid = False)
+obj.line_chart(x = x, y = y, legend = ['line 1', 'line 2','line 3'], axes = ['bottom', 'left'], axes_labels = ['x', 'y'], grid = False)
 ```
 
 ![Lines chart](images/lines_chart.png)
@@ -64,11 +65,12 @@ No gráfico de barras é possível plotar n grupos com n barras. Os parâmetros 
 |labels| categorias| lista
 |values| valores das categorias| lista
 |legend| legenda| lista
-|axes| plota ou não os eixos| booleano
+|axes| lista com os eixos desejados| lista
+|axes_labels| lista com quais eixos devem ter labal| lista
 |grid| plota ou não as grades| booleano
 
 ```python
-obj.plot_bar_charts(labels = labels, values = [men,women], legend = ['men','women'], axes = True, grid = False)
+obj.bar_chart(labels = labels, values = [men,women], legend = ['men','women'], axes = ['bottom', 'left'], axes_labels = ['x', 'y'] True, grid = False)
 ```
 
 ![Bars chart](images/bars_chart.png)
