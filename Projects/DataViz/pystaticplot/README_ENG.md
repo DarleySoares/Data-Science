@@ -4,7 +4,7 @@
  </p1>
  
  
-# Title
+# Pystaticplot
 
 The module offers custom graphics that were developed using the matplotlib package. For graphics there are some possibilities for user customization, such as selecting the color palette.
 
@@ -19,10 +19,10 @@ To use the module, you need to add it to the project folder and pass the paramet
 **color_labels** = color used for axes, labels and grids (color in hex format)
 
 ```python
-import module
+import pystaticplot
 
 # defines an object of the class
-obj = module.dataviz(
+obj = pystaticplot.dataviz(
     background  = '#1B1B2F', auxiliary_background ='#22223D',
     colors = ['#F54291','#2AD5F5','#F5E55B','#A81D59','#2594A8'],
     color_labels = '#FFFFFF') 
