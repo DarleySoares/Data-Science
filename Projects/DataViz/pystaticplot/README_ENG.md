@@ -1,6 +1,6 @@
 <p align= "right">
-    <a href = "https://github.com/DarleySoares/Data-Science/blob/master/DataViz/Interfaces/README.md"><img src = https://raw.githubusercontent.com/DarleySoares/Data-Science/master/images/brazil.png></a>
-    <a href = "https://github.com/DarleySoares/Data-Science/blob/master/DataViz/Interfaces/README_ENG.md"><img src = https://raw.githubusercontent.com/DarleySoares/Data-Science/master/images/usa.png></a>
+    <a href = "https://github.com/DarleySoares/Data-Science/blob/master/Projects/DataViz/pystaticplot/README.md"><img src = https://raw.githubusercontent.com/DarleySoares/Data-Science/master/images/brazil.png></a>
+    <a href = "https://github.com/DarleySoares/Data-Science/blob/master/Projects/DataViz/pystaticplot/README_ENG.md"><img src = https://raw.githubusercontent.com/DarleySoares/Data-Science/master/images/usa.png></a>
  </p1>
  
  
