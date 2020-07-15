@@ -34,6 +34,7 @@ obj = pystaticplot.dataviz(
 * [Bars chart](#bars-chart)
 * [Progress doughnut chart](#progress-doughnut-chart)
 * [Horizontal bars chart](#horizontal-bars-chart)
+* [Gauge chart](#gauge-chart)
 
 ## Lines chart
 
@@ -102,3 +103,18 @@ obj.plot_horizontal_bar(['C1', 'C2', 'C3', 'C4', 'C5'],[15, 40, 20,70, 20])
 ```
 
 ![Horizontal bars chart](images/horizontal_bars_chart.png)
+
+## Gauge chart
+
+In the gauge chart a archer with the value is inserted.
+
+| Parameters | Description | Type |
+|:----------:|:-----------:|:----:|
+|value| value | float
+|title| title| string
+
+```python
+obj.gauge(80, title = 'TESTE')
+```
+
+![Gauge chart](images/gauge_chart.png)

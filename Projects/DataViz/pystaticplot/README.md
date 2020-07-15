@@ -36,6 +36,7 @@ obj = pystaticplot.dataviz(
 * [Gráfico de barras](#gráfico-de-barras)
 * [Gráfico de progresso](#gráfico-de-progresso)
 * [Gráfico de barras horizontais](#gráfico-de-barras-horizontais)
+* [Gauge](#gauge)
 
 ## Gráfico de linhas
 
@@ -51,7 +52,7 @@ No gráfico de linhas é possível plotar n linhas no mesmo eixo. Os parâmetros
 |grid| plota ou não as grades| booleano
 
 ```python
-obj.line_chart(x = x, y = y, legend = ['line 1', 'line 2','line 3'], axes = ['bottom', 'left'], axes_labels = ['x', 'y'], grid = False)
+obj.gauge(80, title = 'TESTE')
 ```
 
 ![Lines chart](images/lines_chart.png)
@@ -104,3 +105,18 @@ obj.plot_horizontal_bar(['C1', 'C2', 'C3', 'C4', 'C5'],[15, 40, 20,70, 20])
 ```
 
 ![Gráfico de barras horizontais](images/horizontal_bars_chart.png)
+
+## Gauge
+
+No gráfico de gauge é mostrado o valor alcançado em relação a 100%
+
+| Parâmetros | Descrição   | Tipo |
+|:----------:|:-----------:|:----:|
+|value| categorias| float
+|title| título do gráfico| string
+
+```python
+obj.gauge(80, title = 'TESTE')
+```
+
+![Gauge chart](images/gauge_chart.png)

@@ -1,14 +1,18 @@
 import pandas as pd 
 import numpy as np 
 import matplotlib.pyplot as plt
+from matplotlib import cm
+from matplotlib.patches import Circle, Wedge, Rectangle
+from pylab import *
 
 class dataviz:
 
-    def __init__(self, background  = '#1B1B2F', auxiliary_background ='#22223D', colors = ['#F54291','#2AD5F5','#F5E55B','#A81D59','#2594A8'], color_labels = '#FFFFFF'):
+    def __init__(self, background  = '#1B1B2F', auxiliary_background ='#22223D', colors = ['#F54291','#2AD5F5','#F5E55B','#A81D59','#2594A8'], color_labels = '#FFFFFF', palette = 'RdPu'):
         self.background = background
         self.auxiliary_background = auxiliary_background
         self.colors = colors
         self.color_labels = color_labels
+        self.palette = 'RdPu'
 
     def generates_figure(self, axes = ['bottom', 'left', 'right', 'bottom'], axes_labels = ['x', 'y'], grid = True):
         """Generates the figure, axes and grids.
@@ -200,7 +204,7 @@ class dataviz:
         ax.annotate(f'{value} %', (0,0), fontsize = 36, color = self.color_labels, va = 'center', ha = 'center', family = 'monospace')
 
         plt.show()
-    
+      
     def horizontal_bar_chart(self, labels, values):
         """Plots horizontal bar with n groups.
         
@@ -243,3 +247,75 @@ class dataviz:
         # plot the bars
         ax.barh(category, values, color = self.colors, height = 0.2)
 
+    def gauge(self, value,  title = ''):
+        """Plots gauge chart.
+        
+        Parameters
+        ----------
+        value : float
+            float value
+        title : str
+            gauge title
+        """
+
+        # generates the figure
+        fig, ax = plt.subplots(facecolor = self.background)
+        ax = plt.gca()
+        ax.set_facecolor(self.background)
+
+        # generates color list from the palette
+        cmap = cm.get_cmap(self.palette, 2000)
+        # get hex format colors
+        colors = []
+        for i in range(cmap.N):
+            rgb = cmap(i)[:3]
+            colors.append(matplotlib.colors.rgb2hex(rgb))
+        
+        # cuts the palette collor from the middle
+        colors[1000:]
+        colors = colors[::-1]
+        value_ = str(value) + ' %'
+        value = 225 -2.7*value
+
+        # create the unit arches
+        start = np.linspace(-45,225,1000, endpoint = True)[0:-1]
+        end = np.linspace(-45,225,1000, endpoint = True)[1::]
+        ang_range = np.c_[start,end]
+
+        # create the arches
+        patches = []
+        for ang, c in zip(ang_range, colors):
+            patches.append(Wedge((0.,0.), .4, *ang, facecolor = self.background, lw = 2))
+            if ang.max() < value:
+                patches.append(Wedge((0.,0.), .4, *ang, width = 0.07, facecolor = self.auxiliary_background, lw = 2))
+            else:
+                patches.append(Wedge((0.,0.), .4, *ang, width = 0.07, facecolor = c, lw = 2))
+
+        # plots the archers
+        [ax.add_patch(p) for p in patches]
+
+        # add the minimum value
+        ax.text(0.42 * np.cos(np.radians(225)), 0.42* np.sin(np.radians(225)), 0, horizontalalignment = 'center', verticalalignment = 'center', fontsize = 11, fontweight = 'ultralight', color = self.color_labels, rotation = np.degrees(np.radians(225) * np.pi / np.pi - np.radians(90)))
+
+        # add the maximum value
+        ax.text(0.42 * np.cos(np.radians(315)), 0.42* np.sin(np.radians(315)), 100, horizontalalignment = 'center', verticalalignment = 'center', fontsize = 11, fontweight = 'ultralight', color = self.color_labels, rotation = np.degrees(np.radians(315) * np.pi / np.pi - np.radians(90)))
+        
+        # writes the title
+        ax.text(0, -0.38, title, horizontalalignment = 'center', verticalalignment = 'center', fontsize = 12, fontweight = 'bold', color = self.color_labels, fontfamily = 'sans-serif')
+
+        # writes the value
+        ax.text(0, -.3, value_, horizontalalignment = 'center', verticalalignment = 'center', fontsize = 32, fontweight = 'book', color = self.color_labels, fontfamily = 'sans-serif')
+
+        # draw the arrow
+        ax.arrow(0, 0, 0.32 * np.cos(np.radians(value)), 0.32 * np.sin(np.radians(value)),width=0.01, head_width=0.01, head_length=0.1, fc=self.color_labels, ec=self.color_labels, fill = True)
+        
+        # draw the circle inside the arrow
+        ax.add_patch(Circle((0, 0), radius = 0.02, facecolor = self.color_labels))
+        ax.add_patch(Circle((0, 0), radius = 0.01, facecolor = self.auxiliary_background, zorder = 12))
+
+        # configure the display area
+        ax.set_frame_on(False)
+        ax.axes.set_xticks([])
+        ax.axes.set_yticks([])
+        ax.axis('equal')
+        plt.tight_layout()
