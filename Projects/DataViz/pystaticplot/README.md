@@ -20,6 +20,8 @@ Para utilizar o módulo é necessário adiciona-lo à pasta do projeto e passar 
 
 **color_labels** = cor utilizada para eixos, labels e grades (string da cor no formato hexadecimal)
 
+**palette** = paleta de cores disponibilizadas pela biblioteca matplotlib 
+
 ```python
 import pystaticplot
 
@@ -27,7 +29,7 @@ import pystaticplot
 obj = pystaticplot.dataviz(
     background  = '#1B1B2F', auxiliary_background ='#22223D',
     colors = ['#F54291','#2AD5F5','#F5E55B','#A81D59','#2594A8'],
-    color_labels = '#FFFFFF') 
+    color_labels = '#FFFFFF', palette = 'RdPu') 
 ```
 
 ## Visualizações

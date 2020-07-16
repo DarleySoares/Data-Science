@@ -18,6 +18,8 @@ To use the module, you need to add it to the project folder and pass the paramet
 
 **color_labels** = color used for axes, labels and grids (color in hex format)
 
+**palette** = color palette made available by the matplotlib library
+
 ```python
 import pystaticplot
 
@@ -25,7 +27,7 @@ import pystaticplot
 obj = pystaticplot.dataviz(
     background  = '#1B1B2F', auxiliary_background ='#22223D',
     colors = ['#F54291','#2AD5F5','#F5E55B','#A81D59','#2594A8'],
-    color_labels = '#FFFFFF') 
+    color_labels = '#FFFFFF', palette = 'RdPu') 
 ```
 
 ## Visualizations
