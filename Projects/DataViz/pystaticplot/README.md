@@ -14,8 +14,6 @@ Para utilizar o módulo é necessário adiciona-lo à pasta do projeto e passar 
 
 **auxiliary_background** = cor auxiliar para fundo de gráficos (string da cor no formato hexadecimal)
 
-**auxiliary_background** = cor auxiliar para fundo de gráficos (string da cor no formato hexadecimal)
-
 **colors** = paleta de cores (lista de strings das cores no formato hexadecimal)
 
 **color_labels** = cor utilizada para eixos, labels e grades (string da cor no formato hexadecimal)
