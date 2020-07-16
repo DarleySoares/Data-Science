@@ -18,6 +18,7 @@ Graduando em Engenharia de Controle e Automação e estagiário em inteligência
 
 ## Projetos
 
+* [Pystaticplot - Módulo para visualização de dados](https://github.com/DarleySoares/Data-Science/tree/master/Projects/DataViz/pystaticplot)
 
 ## Créditos
 
