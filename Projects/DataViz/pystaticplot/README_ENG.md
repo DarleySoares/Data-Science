@@ -1,3 +1,7 @@
+<p align= "center">
+    <img src = "https://raw.githubusercontent.com/DarleySoares/Data-Science/master/Projects/DataViz/pystaticplot/images/pystaticplot.png" width="100"></a>
+ </p1>
+
 <p align= "right">
     <a href = "https://github.com/DarleySoares/Data-Science/blob/master/Projects/DataViz/pystaticplot/README.md"><img src = https://raw.githubusercontent.com/DarleySoares/Data-Science/master/images/brazil.png></a>
     <a href = "https://github.com/DarleySoares/Data-Science/blob/master/Projects/DataViz/pystaticplot/README_ENG.md"><img src = https://raw.githubusercontent.com/DarleySoares/Data-Science/master/images/usa.png></a>
