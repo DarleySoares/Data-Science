@@ -264,7 +264,7 @@ class dataviz:
         ax.set_facecolor(self.background)
 
         # generates color list from the palette
-        cmap = cm.get_cmap(self.palette, 2000)
+        cmap = cm.get_cmap(self.palette, 540)
         # get hex format colors
         colors = []
         for i in range(cmap.N):
@@ -278,8 +278,8 @@ class dataviz:
         value = 225 -2.7*value
 
         # create the unit arches
-        start = np.linspace(-45,225,1000, endpoint = True)[0:-1]
-        end = np.linspace(-45,225,1000, endpoint = True)[1::]
+        start = np.linspace(-45,225,270, endpoint = True)[0:-1]
+        end = np.linspace(-45,225,270, endpoint = True)[1::]
         ang_range = np.c_[start,end]
 
         # create the arches
