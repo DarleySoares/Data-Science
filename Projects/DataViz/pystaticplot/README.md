@@ -1,5 +1,5 @@
 <p align= "center">
-    <img src = "https://raw.githubusercontent.com/DarleySoares/Data-Science/master/Projects/DataViz/pystaticplot/images/pystaticplot.png" width="100"></a>
+    <img src = "https://raw.githubusercontent.com/DarleySoares/Data-Science/master/Projects/DataViz/pystaticplot/images/pystaticplot.png" width="200"></a>
  </p1>
 
 <p align= "right">
