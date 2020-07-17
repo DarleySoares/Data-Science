@@ -12,7 +12,7 @@ class dataviz:
         self.auxiliary_background = auxiliary_background
         self.colors = colors
         self.color_labels = color_labels
-        self.palette = 'RdPu'
+        self.palette = palette
 
     def generates_figure(self, axes = ['bottom', 'left', 'right', 'bottom'], axes_labels = ['x', 'y'], grid = True):
         """Generates the figure, axes and grids.
@@ -36,7 +36,7 @@ class dataviz:
         ax = plt.gca()
         ax.set_facecolor(self.background)
 
-        all_axes = ['bottom', 'left', 'right', 'bottom']
+        all_axes = ['bottom', 'left', 'right', 'top']
         delete_axes = set(all_axes) - set(axes)
         all_axes_labels = ['x', 'y']
         delete_axes_labels = set(all_axes_labels) - set(axes_labels)
@@ -59,7 +59,7 @@ class dataviz:
         if grid:
             # add the grids
             plt.grid(color = self.color_labels, linestyle = ':', linewidth = 2, alpha = 0.1)
-        
+
         return ax
 
     def line_chart(self, x, y, legend = None, axes = ['bottom', 'left'], axes_labels = ['x','y'], grid = True):
@@ -80,7 +80,7 @@ class dataviz:
         grid : boolean
             Grid flag
         """
-        
+
         ax = self.generates_figure(axes = axes, grid = grid, axes_labels= axes_labels)
 
         # plots the lines
@@ -99,7 +99,7 @@ class dataviz:
 
         # generates the shadow below the lines
         for i in range(0, len(x)):
-            ax.fill_between(x = x[i], y1 = y[i],y2 = y[i].min(), color = self.colors[i], alpha = 0.08)
+            ax.fill_between(x = x[i], y1 = y[i],y2 = np.array(y[i]).min(), color = self.colors[i], alpha = 0.08)
 
         # generates the legend
         if legend == None:
@@ -113,6 +113,15 @@ class dataviz:
         # change de color legend   
         for text in leg.get_texts():
             plt.setp(text, color = self.color_labels)
+
+        # set x and y limits
+        minn = np.array(x).min() - 0.2*np.array(x).min()
+        maxx = np.array(x).max() + 0.2*np.array(x).max()
+        plt.xlim(minn,maxx)
+
+        minn = np.array(y).min() - 0.2*np.array(y).min()
+        maxx = np.array(y).max() + 0.2*np.array(y).max()
+        plt.ylim(minn,maxx)
 
     def bar_chart(self, labels, values, legend = None, axes = [], axes_labels = ['x'], grid = False):
         """Plots bar chart with n groups.
@@ -165,6 +174,16 @@ class dataviz:
         # changes the legends color
         for text in leg.get_texts():
             plt.setp(text, color = self.color_labels)
+        
+        # set y limits
+        minn = np.array(values).min()
+        if minn > 0:
+            minn = 0
+        else:
+            minn = np.array(values).min() - 0.2*np.array(values).min() 
+
+        maxx = np.array(values).max() + 0.2*np.array(values).max() 
+        plt.ylim(minn,maxx)
 
     def progress_chart(self, value, circles = 4):
         """Plots gauge chart.
