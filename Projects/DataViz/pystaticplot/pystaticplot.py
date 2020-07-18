@@ -27,6 +27,7 @@ class dataviz:
             Grid flag
         Returns
         -------
+        matplotlib.figure.Figure
         matplotlib.axes._subplots.AxesSubplot
         """
 
@@ -60,9 +61,9 @@ class dataviz:
             # add the grids
             plt.grid(color = self.color_labels, linestyle = ':', linewidth = 2, alpha = 0.1)
 
-        return ax
+        return fig, ax
 
-    def line_chart(self, x, y, legend = None, axes = ['bottom', 'left'], axes_labels = ['x','y'], grid = True):
+    def line_chart(self, x, y, legend = None, axes = ['bottom', 'left'], axes_labels = ['x','y'], grid = True, fname = None):
         """Plots line graph with n lines.
         
         Parameters
@@ -81,7 +82,7 @@ class dataviz:
             Grid flag
         """
 
-        ax = self.generates_figure(axes = axes, grid = grid, axes_labels= axes_labels)
+        fig, ax = self.generates_figure(axes = axes, grid = grid, axes_labels= axes_labels)
 
         # plots the lines
         for i in range(0, len(y)):
@@ -123,7 +124,11 @@ class dataviz:
         maxx = np.array(y).max() + 0.2*np.array(y).max()
         plt.ylim(minn,maxx)
 
-    def bar_chart(self, labels, values, legend = None, axes = [], axes_labels = ['x'], grid = False):
+        if(fname != None):
+            plt.savefig(fname, transparent = True)
+        return fig 
+
+    def bar_chart(self, labels, values, legend = None, axes = [], axes_labels = ['x'], grid = False, fname = None):
         """Plots bar chart with n groups.
         
         Parameters
@@ -185,7 +190,11 @@ class dataviz:
         maxx = np.array(values).max() + 0.2*np.array(values).max() 
         plt.ylim(minn,maxx)
 
-    def progress_chart(self, value, circles = 4):
+        if(fname != None):
+            plt.savefig(fname, transparent = True)
+        return fig 
+
+    def progress_chart(self, value, circles = 4, fname = None):
         """Plots gauge chart.
         
         Parameters
@@ -222,9 +231,11 @@ class dataviz:
         p.gca().add_artist(circle)
         ax.annotate(f'{value} %', (0,0), fontsize = 36, color = self.color_labels, va = 'center', ha = 'center', family = 'monospace')
 
-        plt.show()
+        if(fname != None):
+            plt.savefig(fname, transparent = True)
+        return fig 
       
-    def horizontal_bar_chart(self, labels, values):
+    def horizontal_bar_chart(self, labels, values, fname = None):
         """Plots horizontal bar with n groups.
         
         Parameters
@@ -266,7 +277,11 @@ class dataviz:
         # plot the bars
         ax.barh(category, values, color = self.colors, height = 0.2)
 
-    def gauge(self, value,  title = ''):
+        if(fname != None):
+            plt.savefig(fname, transparent = True)
+        return fig 
+
+    def gauge(self, value,  title = '', fname = None):
         """Plots gauge chart.
         
         Parameters
@@ -338,3 +353,7 @@ class dataviz:
         ax.axes.set_yticks([])
         ax.axis('equal')
         plt.tight_layout()
+
+        if(fname != None):
+            plt.savefig(fname, transparent = True)
+        return fig 
