@@ -5,6 +5,7 @@ from matplotlib import cm
 from matplotlib.patches import Circle, Wedge, Rectangle
 from pylab import *
 
+#classe
 class dataviz:
 
     def __init__(self, background  = '#1B1B2F', auxiliary_background ='#22223D', colors = ['#F54291','#2AD5F5','#F5E55B','#A81D59','#2594A8'], color_labels = '#FFFFFF', palette = 'RdPu'):
@@ -100,7 +101,7 @@ class dataviz:
 
         # generates the shadow below the lines
         for i in range(0, len(x)):
-            ax.fill_between(x = x[i], y1 = y[i],y2 = np.array(y[i]).min(), color = self.colors[i], alpha = 0.08)
+            ax.fill_between(x = x[i], y1 = y[i],y2 = np.array(y[i]).min()+ 0.2*np.array(y[i]).min(), color = self.colors[i], alpha = 0.08)
 
         # generates the legend
         if legend == None:
@@ -116,11 +117,11 @@ class dataviz:
             plt.setp(text, color = self.color_labels)
 
         # set x and y limits
-        minn = np.array(x).min() - 0.2*np.array(x).min()
-        maxx = np.array(x).max() + 0.2*np.array(x).max()
+        minn = np.array(x).min()
+        maxx = np.array(x).max()
         plt.xlim(minn,maxx)
 
-        minn = np.array(y).min() - 0.2*np.array(y).min()
+        minn = np.array(y).min() + 0.2*np.array(y).min()
         maxx = np.array(y).max() + 0.2*np.array(y).max()
         plt.ylim(minn,maxx)
 
@@ -147,7 +148,7 @@ class dataviz:
             Grid flag
         """
 
-        ax = self.generates_figure(axes = axes, grid = grid, axes_labels= axes_labels)
+        fig, ax = self.generates_figure(axes = axes, grid = grid, axes_labels= axes_labels)
 
         # set the width of the bars
         width = 0.8/len(values)
