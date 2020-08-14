@@ -8,7 +8,7 @@ from pylab import *
 #classe
 class dataviz:
 
-    def __init__(self, background  = '#1B1B2F', auxiliary_background ='#22223D', colors = ['#F54291','#2AD5F5','#F5E55B','#A81D59','#2594A8'], color_labels = '#FFFFFF', palette = 'RdPu'):
+    def __init__(self, background  = '#1B1B2F', auxiliary_background ='#22223D', colors = ['#F54291','#2AD5F5','#F5E55B','#A81D59','#2594A8', '#A89914'], color_labels = '#FFFFFF', palette = 'RdPu'):
         self.background = background
         self.auxiliary_background = auxiliary_background
         self.colors = colors

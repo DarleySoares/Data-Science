@@ -19,6 +19,7 @@ Graduating in Control and Automation Engineering and intern in business intellig
 ## Projects
 
 * [Pystaticplot - Module for data visualization](https://github.com/DarleySoares/Data-Science/tree/master/Projects/DataViz/pystaticplot)
+* [Leads Recommendations - Customer System Recommendations](https://github.com/DarleySoares/leads-recommendations)
 
 ## Credits
 
